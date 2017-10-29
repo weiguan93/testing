@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>Post Request Information </title>
+</head>
+   <body>
+   <div id="info">
+   <h1>Post Request Information</h1>
+      <form action="/mykey" method="post" >
+         <fieldset>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" >
+            <br />
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address" >
+            <br />
+            <label for="date">Date:</label>
+            <input type="date input" id="date" name="date" readonly="readonly">
+              <script type="text/javascript">
+               var d = new Date()
+               var dd = d.getDate()
+               var mm = d.getMonth()
+               var yyyy=d.getFullYear()
+               document.getElementById('date').value = yyyy+'-'+mm+'-'+dd;
+              </script> 
+            <br />
+              <label for="time">Time:</label>
+              <input type="time input" id="time" name="time" readonly="readonly">
+              <script type="text/javascript">
+               var e = new Date();
+               var hours = e.getHours() > 12 ? e.getHours() - 12 : e.getHours();
+               var am_pm = e.getHours() >= 12 ? "PM" : "AM";
+               hours = hours < 10 ? "0" + hours : hours;
+               var minutes = e.getMinutes() < 10 ? "0" + e.getMinutes() : e.getMinutes();
+               var seconds = e.getSeconds() < 10 ? "0" + e.getSeconds() : e.getSeconds();
+               document.getElementById("time").value = hours + ":" + minutes + ":" + seconds;
+              </script> 
+              <input type="String" id="am_pm" maxlength="2" name="am_pm"  readonly="readonly">
+              <script type="text/javascript">
+              document.getElementById("am_pm").value = am_pm
+              </script>
+            <br />
+            <input type="submit" value="Submit" >
+         </fieldset>
+      </form>
+	  </div>
+   </body>
+</html>
